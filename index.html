@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <input type="date" name="dob" data-placeholder="Date of birth" required aria-required="true" />
-    <input
-      placeholder="Date"
-      class="textbox-n"
-      type="text"
-      onfocus="(this.type='date')"
-      onblur="(this.type='text')"
-      id="date" />
+    <input type="date" id="myel" />
+    <!-- <input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+        id="date" /> -->
+
+    <script>
+        $("#myel").on("input", function () {
+            if ($(this).val().length > 0) {
+                $(this).addClass("full");
+            }
+            else {
+                $(this).removeClass("full");
+            }
+        });
+    </script>
 </body>
+
 </html>
