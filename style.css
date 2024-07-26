@@ -1,7 +1,8 @@
 /* Styling the date input field */
 .custom-date-input {
     position: relative;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     padding: 10px;
     font-size: 16px;
     box-sizing: border-box;
@@ -38,4 +39,17 @@
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
+}
+
+/* Additional styles for mobile compatibility */
+@media (max-width: 600px) {
+    .custom-date-input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .custom-date-input::after {
+        font-size: 18px;
+        right: 8px;
+    }
 }
