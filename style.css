@@ -1,9 +1,41 @@
-input[type="date"]:before{
-    color:lightgray;
-    content:attr(placeholder);
+/* Styling the date input field */
+.custom-date-input {
+    position: relative;
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
-input[type="date"].full:before {
-    color:black;
-    content:""!important;
+/* Styling the placeholder */
+.custom-date-input::before {
+    content: attr(placeholder);
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+}
+
+.custom-date-input:focus::before,
+.custom-date-input:not(:placeholder-shown)::before {
+    content: '';
+}
+
+/* Hiding the default calendar icon */
+.custom-date-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Custom calendar icon */
+.custom-date-input::after {
+    content: '\1F4C5'; /* Unicode for calendar icon */
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
